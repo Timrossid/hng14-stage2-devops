@@ -41,4 +41,3 @@ def test_get_job_not_found(monkeypatch):
     response = client.get("/jobs/missing-id")
     assert response.status_code == 200
     assert response.json() == {"error": "not found"}
-    
