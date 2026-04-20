@@ -1,6 +1,13 @@
-from fastapi.testclient import TestClient
+import os
+import sys
 from unittest.mock import MagicMock
-import main
+
+from fastapi.testclient import TestClient
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+import main  # noqa: E402
+
 
 client = TestClient(main.app)
 
